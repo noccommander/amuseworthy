@@ -11,7 +11,7 @@ The source is published for reading. It is proprietary (see [`LICENSE`](LICENSE)
 ## How it works
 
 1. **Add an idea** and write a few notes: what it is, who it is for, why now.
-2. **Choose the goal.** **Income** is a business that pays you while you work in it. **Asset** is a company someone could buy one day. The goal sets how much each line counts.
+2. **Choose the goal.** **Income** is a business that pays you while you work in it. **Asset** is a company someone could buy from you one day. The goal sets how much each line counts.
 3. **Answer the four gates** with Pass or Fail. Any Fail means no verdict.
 4. **Rate the 21 lines** from 1 to 5 stars, with a guide on each line that says what earns each rating.
 5. **Read the result:** Average Stars (which ranks your ideas), the verdict (This is the idea, Buildable, Fix one or two lines, or Kill or redesign) and the points behind it.
