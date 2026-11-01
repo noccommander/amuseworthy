@@ -1,0 +1,11 @@
+node_modules/
+.wrangler/
+.DS_Store
+# Secrets and keys never belong in the repository (Wrangler reads a token from .env).
+.env
+.env.*
+.dev.vars*
+*.pem
+*.key
+# npm run test:coverage writes its report here.
+coverage/

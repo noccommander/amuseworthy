@@ -1,0 +1,45 @@
+// Cloudflare Workers deploy (`npx wrangler deploy`): static files, plus a small
+// Worker (worker.mjs) for published landing pages and Meta's API.
+// Which files are published is set in .assetsignore.
+{
+  "name": "idea-calculator",
+  "compatibility_date": "2026-10-01",
+  "main": "worker.mjs",
+  "assets": {
+    "directory": ".",
+    "binding": "ASSETS",
+    // Only these paths run the Worker; every other request is a static file.
+    "run_worker_first": ["/p/*", "/api/*"]
+  },
+  // Your Supabase project, as in src/config.js (the publishable key is public).
+  // The Worker reads published landing pages with it and checks invites.
+  // Change these together with src/config.js and _headers.
+  "vars": {
+    "SUPABASE_URL": "https://YOUR-PROJECT.supabase.co",
+    "SUPABASE_KEY": "sb_publishable_YOUR_KEY"
+  },
+  // Rate limits per client IP (worker.mjs, tooMany): published pages
+  // (/p/*) and the AI routes (/api/*), each answered 429 past its limit. A
+  // starting point, to tune from Workers Logs: a page view is one request,
+  // and one Coach answer can make up to 9 (its tool rounds). Each
+  // namespace_id is any number unique to this Cloudflare account.
+  "ratelimits": [
+    { "name": "PAGE_LIMITER", "namespace_id": "1001", "simple": { "limit": 60, "period": 60 } },
+    { "name": "API_LIMITER", "namespace_id": "1002", "simple": { "limit": 30, "period": 60 } }
+  ],
+  // No preview URLs: otherwise each uploaded version can stay reachable at its
+  // own <version>-idea-calculator address, old code included. Sign-in can't
+  // work there anyway (it isn't in Supabase's or Google's allowed addresses).
+  "preview_urls": false,
+  // Workers Logs: only what the Worker writes itself (one line per competition
+  // review, worker.mjs). Cloudflare's own record of each request stays off,
+  // because each AI request carries the person's API key in a header, and keys
+  // are never logged. Issues groups the Worker's uncaught errors (the dashboard's
+  // Issues tab); it is set here because each deploy turns off whatever this file
+  // leaves out.
+  "observability": {
+    "enabled": true,
+    "logs": { "invocation_logs": false },
+    "issues": { "enabled": true }
+  }
+}

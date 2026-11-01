@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1200" width="900" height="1200" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif">
+  <style>
+    .bg { fill: #eef0f3; } .card { fill: #ffffff; stroke: #d9dde4; } .sunken { fill: #f5f6f8; }
+    .ink { fill: #18202e; } .muted { fill: #5c6577; } .accent { fill: #2a45c9; } .accent-soft { fill: #e3e8fb; }
+    .on-accent { fill: #ffffff; } .star { fill: #a86f00; } .line { stroke: #d9dde4; }
+    .good { fill: #1f7a4d; } .warn { fill: #9a5b00; } .bad { fill: #b4232f; }
+    .good-soft { fill: #e2f2e9; } .warn-soft { fill: #f8ecd9; } .bad-soft { fill: #f8e1e3; }
+    @media (prefers-color-scheme: dark) {
+      .bg { fill: #0f131a; } .card { fill: #171c25; stroke: #2b3240; } .sunken { fill: #1d232e; }
+      .ink { fill: #e6e9ef; } .muted { fill: #9aa2b2; } .accent { fill: #8ea2ff; } .accent-soft { fill: #232c4d; }
+      .on-accent { fill: #0f131a; } .star { fill: #f3b52a; } .line { stroke: #2b3240; }
+      .good { fill: #5cc792; } .warn { fill: #f0a948; } .bad { fill: #ff7b85; }
+      .good-soft { fill: #17322a; } .warn-soft { fill: #3a2c16; } .bad-soft { fill: #3d1f24; }
+    }
+  </style>
+  <rect class="bg" width="900" height="1200"/>
+
+  <!-- Title -->
+  <g transform="translate(60 0)">
+    <rect fill="#2a45c9" y="48" width="64" height="64" rx="14"/>
+    <path d="M17 95 32 63l15 32" fill="none" stroke="#ffffff" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="32" cy="86" r="5" fill="#f3b52a"/>
+    <text class="ink" x="86" y="90" font-size="40" font-weight="800" letter-spacing="-0.5">Amuseworthy</text>
+    <text class="muted" y="160" font-size="26" font-weight="600">See which idea is worth building, in three steps:</text>
+  </g>
+
+  <!-- 1. Compare -->
+  <g transform="translate(60 200)">
+    <rect class="card" width="780" height="290" rx="18" stroke-width="2"/>
+    <circle class="accent" cx="44" cy="48" r="22"/>
+    <text class="on-accent" x="44" y="57" text-anchor="middle" font-size="24" font-weight="800">1</text>
+    <text class="ink" x="82" y="58" font-size="30" font-weight="800">Compare your options</text>
+    <text class="muted" x="82" y="92" font-size="21">Same gates and star lines for every idea, ranked</text>
+    <g font-size="21">
+      <rect class="sunken" x="30" y="118" width="720" height="44" rx="10"/>
+      <text class="ink" x="50" y="147" font-weight="700">Dog grooming van</text>
+      <text class="star" x="440" y="147" font-weight="700">★ 3.92</text>
+      <rect class="good-soft" x="540" y="125" width="190" height="30" rx="15"/>
+      <text class="good" x="635" y="147" text-anchor="middle" font-weight="700">Buildable</text>
+
+      <rect class="sunken" x="30" y="172" width="720" height="44" rx="10"/>
+      <text class="ink" x="50" y="201" font-weight="700">Bookkeeping for cafés</text>
+      <text class="star" x="440" y="201" font-weight="700">★ 3.25</text>
+      <rect class="warn-soft" x="540" y="179" width="190" height="30" rx="15"/>
+      <text class="warn" x="635" y="201" text-anchor="middle" font-weight="700" font-size="18">Fix one or two lines</text>
+
+      <rect class="sunken" x="30" y="226" width="720" height="44" rx="10"/>
+      <text class="ink" x="50" y="255" font-weight="700">Meal planner app</text>
+      <text class="star" x="440" y="255" font-weight="700">★ 2.08</text>
+      <rect class="bad-soft" x="540" y="233" width="190" height="30" rx="15"/>
+      <text class="bad" x="635" y="255" text-anchor="middle" font-weight="700">Kill or redesign</text>
+    </g>
+  </g>
+
+  <!-- 2. Improve -->
+  <g transform="translate(60 515)">
+    <rect class="card" width="780" height="290" rx="18" stroke-width="2"/>
+    <circle class="accent" cx="44" cy="48" r="22"/>
+    <text class="on-accent" x="44" y="57" text-anchor="middle" font-size="24" font-weight="800">2</text>
+    <text class="ink" x="82" y="58" font-size="30" font-weight="800">Improve your offer</text>
+    <text class="muted" x="82" y="92" font-size="21">Coach asks about the weak lines, with the points at stake</text>
+    <g font-size="21">
+      <rect class="sunken" x="30" y="114" width="560" height="104" rx="14"/>
+      <text class="ink" x="50" y="146" font-weight="700">Q1 · Offer you can guarantee (×5)</text>
+      <text class="ink" x="50" y="176">Will you rebook free if a groom is missed?</text>
+      <text class="accent" x="50" y="204" font-weight="700">→ Yes. +10 points</text>
+      <rect class="accent" x="610" y="166" width="140" height="44" rx="14"/>
+      <text class="on-accent" x="680" y="195" text-anchor="middle" font-weight="700">1 yes</text>
+      <rect class="good-soft" x="30" y="232" width="720" height="40" rx="10"/>
+      <text class="good" x="50" y="259" font-weight="700">110 → 120 points: now Buildable</text>
+    </g>
+  </g>
+
+  <!-- 3. Publish -->
+  <g transform="translate(60 830)">
+    <rect class="card" width="780" height="290" rx="18" stroke-width="2"/>
+    <circle class="accent" cx="44" cy="48" r="22"/>
+    <text class="on-accent" x="44" y="57" text-anchor="middle" font-size="24" font-weight="800">3</text>
+    <text class="ink" x="82" y="58" font-size="30" font-weight="800">Publish your first page</text>
+    <text class="muted" x="82" y="92" font-size="21">An AI writes a landing page for the idea you choose</text>
+    <rect class="sunken" x="30" y="114" width="720" height="152" rx="14"/>
+    <path class="line" d="M30 152h720" stroke-width="2"/>
+    <circle class="bad" cx="54" cy="133" r="6"/><circle class="warn" cx="74" cy="133" r="6"/><circle class="good" cx="94" cy="133" r="6"/>
+    <text class="muted" x="120" y="140" font-size="19">…/p/dog-grooming-van</text>
+    <rect class="good-soft" x="610" y="120" width="124" height="26" rx="13"/>
+    <text class="good" x="672" y="139" text-anchor="middle" font-size="17" font-weight="700">Published</text>
+    <text class="ink" x="54" y="190" font-size="26" font-weight="800">Grooming that comes to your door</text>
+    <text class="muted" x="54" y="216" font-size="19">Book a calm, mobile groom in your own driveway.</text>
+    <rect class="accent" x="54" y="228" width="168" height="30" rx="8"/>
+    <text class="on-accent" x="138" y="249" text-anchor="middle" font-size="17" font-weight="700">Book a groom</text>
+  </g>
+
+  <text class="muted" x="450" y="1164" text-anchor="middle" font-size="22" font-weight="600">Private to your account · Saves on its own · Works on your phone</text>
+</svg>

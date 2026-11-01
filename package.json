@@ -1,0 +1,19 @@
+{
+  "name": "idea-calculator",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Score business ideas with pass/fail gates, a weighted scorecard and a verdict.",
+  "homepage": "https://your-app.workers.dev",
+  "scripts": {
+    "brand-images": "node scripts/brand-images.js",
+    "start": "python3 -m http.server 8000 --bind 127.0.0.1"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "devDependencies": {
+    "@supabase/supabase-js": "2.117.2",
+    "playwright": "1.56.1",
+    "wrangler": "4.153.0"
+  }
+}

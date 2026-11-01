@@ -1,0 +1,9 @@
+# Security headers for every page, applied by Cloudflare (wrangler reads this
+# file itself; it isn't published as a page). The connect-src address is the
+# Supabase project in src/config.js: change both together.
+/*
+  Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; connect-src 'self' https://YOUR-PROJECT.supabase.co; frame-ancestors 'none'; base-uri 'none'; object-src 'none'; form-action 'self'
+  X-Frame-Options: DENY
+  Referrer-Policy: strict-origin-when-cross-origin
+  X-Content-Type-Options: nosniff
+  Permissions-Policy: camera=(), microphone=(), geolocation=()

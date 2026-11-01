@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Privacy · Amuseworthy</title>
+<link rel="icon" href="images/icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="styles.css">
+<style>
+  .legal { max-width: 42rem; display: grid; gap: 20px; line-height: 1.55; }
+  .legal h1 { font-size: var(--step-2); font-weight: 800; }
+  .legal h2 { font-size: var(--step-1); font-weight: 600; margin-bottom: 6px; }
+  .legal p, .legal ul { margin: 0; }
+  .legal ul { padding-left: 1.25em; display: grid; gap: 4px; }
+  .legal a { color: var(--accent); }
+  .legal .fine { color: var(--muted); font-size: var(--step--1); }
+</style>
+</head>
+<body>
+<main class="shell legal">
+  <p><a href="./">← Amuseworthy</a></p>
+  <h1>Privacy</h1>
+  <p>Amuseworthy (formerly Ideation Calculator) is a small, invite-only app for scoring business ideas. This page explains what it stores and why.</p>
+
+  <section>
+    <h2>What is stored</h2>
+    <ul>
+      <li>Your Google account's email address, name and profile picture link, which Google shares when you sign in. They identify your account and check that you are invited.</li>
+      <li>The ideas you enter: names, notes, ratings, gates, goals and settings.</li>
+      <li>Landing pages: the drafts you generate (up to 200 in all), each with its own address, and the page you make production (up to 100 in all), with the idea's address.</li>
+      <li>Competition reviews you run: what the review found and proposed, with the web pages it cites (up to 200 in all). Only you can read them.</li>
+      <li>In your browser: your sign-in session, display preferences and, if you add it, your Meta API key in the API Vault, shared by Coach, landing pages and competition reviews, the model each of them uses, and your Coach conversations. The key and conversations are never saved to your account. If a change isn't saved yet when you are signed out (for example, in another tab) or leave the page, it is kept in the browser until it is saved.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>What Google shares</h2>
+    <p>Sign-in asks Google only for your email address and basic profile. The app has no access to your Gmail, Drive, contacts or anything else in your Google account.</p>
+  </section>
+
+  <section>
+    <h2>Where it is stored</h2>
+    <p>Accounts and ideas are stored with Supabase, which provides the database and sign-in. The site, including its fonts, is served by Cloudflare. Google is contacted only when you sign in.</p>
+  </section>
+
+  <section>
+    <h2>Who can see your ideas</h2>
+    <p>Only you, while signed in to your account, except for landing pages and drafts you publish. Database rules stop other users from reading or changing them. The app's owner administers the database and so has technical access to what is stored in it.</p>
+  </section>
+
+  <section>
+    <h2>What is not done</h2>
+    <p>No ads, no analytics or tracking. Your data is not sold, and it is not shared with anyone other than Supabase and Cloudflare, which store and serve it for the app, and Meta, the AI provider, only when you generate a landing page, talk to Coach or run a competition review.</p>
+  </section>
+
+  <section>
+    <h2>Landing pages</h2>
+    <p>Generating a landing page is optional. When you click <strong>Generate a draft</strong>, the idea's name, tags and notes, including each line's note, go with your own API key through this site to Meta, which writes the page under your own agreement with Meta. This site passes them on without storing them, and writes one line about each page to its log: which model, how long it took, how much was written, why the model stopped and the provider's count of the words (tokens) used. Never your key, your idea's text or the page. Your ratings and scores are not sent.</p>
+    <p>One choice lets Meta use what is sent and the page it writes to train its models: the <strong>Muse Spark 1.3 Contributor</strong> model (that is why it costs less). The app says so when you choose it. For how Meta handles what you send, see its own terms.</p>
+    <p>Published pages are public, drafts included: a new draft is published at its own address, and anyone with that address can read it. Search engines are asked to skip drafts, but may find the production page. Unpublishing a draft or the production page, deleting its idea, or the owner removing your invite takes it down; deleting the idea also deletes its drafts, and its address is never given to another page.</p>
+  </section>
+
+  <section>
+    <h2>Coach</h2>
+    <p>Coach, the chatbot that scores and improves your ideas, is optional. When you send it a message, the whole conversation goes with your own API key through this site to Meta, for the model you chose for Coach, including the ideas Coach reads to answer you: their names, notes, tags, gates, ratings and each line's note. This site passes them on without storing them, and writes one line about each answer to its log, as for landing pages: which model, how long it took, how much was written, why the model stopped and the tokens used. Never your key, the conversation or the answer. The same model choice as for landing pages may let Meta use what is sent to train its models.</p>
+    <p>Conversations are kept in your browser only, for your account, up to the last 20 (about 1 MB at most), and never saved to your account or on this site. <strong>Delete conversation</strong> in Coach removes one from the browser. Coach can't change your ideas: it shows a card, and only your click saves it.</p>
+  </section>
+
+  <section>
+    <h2>Competition reviews</h2>
+    <p>A competition review is optional. When you click <strong>Review the competition</strong>, the idea's name, tags and notes, including each line's note, and its scorecard (goal, gates, stars and verdict) go with your own API key through this site to Meta, for the models you chose for reviews. Meta searches the web with its own search tool to find and research competitors, so the searches it makes are based on your idea. This site passes everything on without storing it, and writes one line about each review to its log: which models, how long it took, how far it got, how many searches it made and how it ended. Never your key, your idea's text or Meta's messages.</p>
+    <p>The finished review is saved to your account, so you can read it again; delete it, or the idea, to remove it. Its proposal changes nothing until you apply it. The same model choice as for landing pages may let Meta use what is sent to train its models.</p>
+  </section>
+
+  <section>
+    <h2>Deleting your data</h2>
+    <p>You can delete ideas in the app at any time. To delete your account and all its ideas, ask the owner of the app, the person who invited you.</p>
+  </section>
+
+  <p class="fine">Last updated 1 November 2026.</p>
+</main>
+</body>
+</html>

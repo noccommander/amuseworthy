@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Security · Amuseworthy</title>
+<link rel="icon" href="images/icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="styles.css">
+<style>
+  .legal { max-width: 42rem; display: grid; gap: 20px; line-height: 1.55; }
+  .legal h1 { font-size: var(--step-2); font-weight: 800; }
+  .legal h2 { font-size: var(--step-1); font-weight: 600; margin-bottom: 6px; }
+  .legal p, .legal ul, .legal ol { margin: 0; }
+  .legal ul, .legal ol { padding-left: 1.25em; display: grid; gap: 4px; }
+  .legal a { color: var(--accent); }
+  .legal section > h2 + * { margin-top: 0; }
+  .legal section > * + * { margin-top: 10px; }
+  .legal .fine { color: var(--muted); font-size: var(--step--1); }
+</style>
+</head>
+<body>
+<!-- The security policy in SECURITY.md, for the site: change both together. -->
+<main class="shell legal">
+  <p><a href="./">← Amuseworthy</a></p>
+  <h1>Security policy</h1>
+  <p>This page matches the security policy (<code>SECURITY.md</code>) in the app's repository.</p>
+
+  <section>
+    <h2>Reporting a vulnerability</h2>
+    <ol>
+      <li>Open the repository's <strong>Security</strong> tab and click <strong>Report a vulnerability</strong> or notify maintainer.</li>
+      <li>Describe the problem, the steps to reproduce it, and what an attacker could do with it. Include the browser, the URL and the account type (signed in, invited or not) if they matter.</li>
+    </ol>
+    <p>What happens next:</p>
+    <ul>
+      <li>You'll get a reply.</li>
+      <li>If the problem is confirmed, it is fixed on <code>main</code>, which deploys straight away. You'll be told when it is fixed.</li>
+      <li>If it isn't treated as a vulnerability, you'll get the reason.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>In scope</h2>
+    <ul>
+      <li>The web app: <code>index.html</code>, <code>src/</code> and the security headers in <code>_headers</code>.</li>
+      <li>The Worker, <code>worker.mjs</code>: published landing pages (<code>/p/…</code>), <code>/api/generate</code>, <code>/api/chat</code> and <code>/api/landscape</code>.</li>
+      <li>The database rules in <code>supabase/schema.sql</code>: row-level security, the invite-only sign-in hook, and the functions anyone may call.</li>
+    </ul>
+    <p>Examples of what counts:</p>
+    <ul>
+      <li>reading or changing another person's ideas, drafts or landing pages;</li>
+      <li>signing in, or using <code>/api/…</code>, without being invited;</li>
+      <li>running a script in the app, or in a published landing page;</li>
+      <li>getting someone's model API key out of their browser, or out of the Worker.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Out of scope</h2>
+    <ul>
+      <li><strong>The Supabase publishable key and project address in <code>src/config.js</code>.</strong> They are public by design; the database rules decide what each person can read and change.</li>
+      <li><strong>Keys and conversations kept in the browser.</strong> Landing page keys, Coach keys and Coach history are stored in the browser's local storage on purpose, as the <a href="privacy.html">privacy page</a> explains. A report needs a way for another site or person to read them.</li>
+      <li><strong>What a model writes.</strong> A landing page or Coach answer you don't like, made up or wrong, isn't a vulnerability. Ways to get past the page sandbox or the Markdown escaping are.</li>
+      <li><strong>Problems in Cloudflare, Supabase, Google sign-in or the AI providers.</strong> Report those to them.</li>
+      <li><strong>Denial of service, load testing, spam, social engineering and physical attacks.</strong></li>
+      <li><strong>Missing best practices with no attack behind them,</strong> such as a header that could be stricter.</li>
+      <li><strong>Vulnerable development tools.</strong> These are tools that never reach the site, such as <code>wrangler</code> or Playwright.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Testing rules</h2>
+    <ul>
+      <li>Use your own account and data. Don't read, change or delete anyone else's.</li>
+      <li>Don't send automated scans or a high volume of requests to the live site.</li>
+      <li>Stop and report as soon as you have shown the problem. Don't keep access or go further than you need to.</li>
+    </ul>
+    <p>Testing in good faith within these rules is welcome, and won't be treated as an attack.</p>
+  </section>
+
+  <p class="fine">Last updated 28 October 2026.</p>
+</main>
+</body>
+</html>

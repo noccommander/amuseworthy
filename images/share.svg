@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <!-- The picture a shared link shows (og:image). Not published as is:
+       scripts/brand-images.js draws it into images/share.png with the site's fonts. -->
+  <rect width="1200" height="630" fill="#18202e"/>
+  <rect x="0" y="0" width="14" height="630" fill="#2a45c9"/>
+  <g transform="translate(80 74)">
+    <rect width="72" height="72" rx="16" fill="#2a45c9"/>
+    <path d="M19 53 36 17l17 36" fill="none" stroke="#fff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="36" cy="43" r="5.5" fill="#f3b52a"/>
+    <text x="96" y="52" font-family="Schibsted Grotesk" font-size="44" font-weight="800" fill="#ffffff" letter-spacing="-0.5">Amuseworthy</text>
+  </g>
+  <text x="80" y="238" font-family="Martian Mono" font-size="22" fill="#8ea2ff" letter-spacing="1.5">PRESSURE-TEST YOUR IDEA BEFORE YOU BUILD IT</text>
+  <text x="80" y="330" font-family="Schibsted Grotesk" font-size="76" font-weight="800" fill="#ffffff" letter-spacing="-1.5">See which of your ideas</text>
+  <text x="80" y="414" font-family="Schibsted Grotesk" font-size="76" font-weight="800" fill="#ffffff" letter-spacing="-1.5">is worth building</text>
+  <text x="80" y="500" font-family="Instrument Sans" font-size="28" font-weight="600" fill="#c9d0de">Compare your options · Improve your offer · Publish your first page</text>
+  <text x="80" y="566" font-family="Schibsted Grotesk" font-size="28" font-weight="800" fill="#f3b52a">Build for Your World</text>
+</svg>

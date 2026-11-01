@@ -1,0 +1,51 @@
+# Publish only the files the app uses: its pages, styles, scripts, the
+# supabase-js copy (with its licence), the how-it-works picture, the icons
+# and the picture a shared link shows, and the fonts (with their licences).
+# Everything else in the repository (node_modules from the build, tests,
+# database scripts, docs) stays out of the site. _headers is read by
+# wrangler itself and never published.
+#
+# Files are listed one by one, so a stray file in one of these folders (an
+# .env, a draft, notes) is never published. A new file the app needs has to be
+# added here.
+/*
+!/index.html
+!/privacy.html
+!/security.html
+!/styles.css
+
+!/src/
+/src/*
+!/src/config.js
+!/src/core.js
+!/src/descriptions.js
+!/src/landing.js
+!/src/coach.js
+!/src/landscape.js
+!/src/cloud.js
+!/src/app.js
+
+!/vendor/
+/vendor/*
+!/vendor/supabase-js-2.117.2.js
+!/vendor/LICENSE-supabase-js.txt
+
+!/images/
+/images/*
+!/images/overview.svg
+!/images/icon.svg
+!/images/icon-180.png
+!/images/share.png
+!/images/halloween.svg
+
+!/fonts/
+/fonts/*
+!/fonts/instrument-sans-latin.woff2
+!/fonts/instrument-sans-latin-ext.woff2
+!/fonts/martian-mono-latin.woff2
+!/fonts/martian-mono-latin-ext.woff2
+!/fonts/schibsted-grotesk-latin.woff2
+!/fonts/schibsted-grotesk-latin-ext.woff2
+!/fonts/OFL-instrument-sans.txt
+!/fonts/OFL-martian-mono.txt
+!/fonts/OFL-schibsted-grotesk.txt

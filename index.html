@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Amuseworthy · See which of your ideas is worth building</title>
+<meta name="description" content="Score every business idea on the same gates and lines, read a verdict you can explain, and fix the weak lines with an AI coach. Then publish a landing page for the idea you choose.">
+<meta name="theme-color" content="#2a45c9">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Amuseworthy">
+<meta property="og:title" content="Amuseworthy: See which of your ideas is worth building">
+<meta property="og:description" content="Pressure-test your idea before you build it. Score every business idea on the same gates and lines, read a verdict you can explain, and fix the weak lines with an AI coach. Then publish a landing page for the idea you choose.">
+<meta property="og:url" content="https://your-app.workers.dev/">
+<meta property="og:image" content="https://your-app.workers.dev/images/share.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Amuseworthy. See which of your ideas is worth building. Compare your options, improve your offer, publish your first page.">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="images/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="images/icon-180.png">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar" id="sidebar">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true">A</span>
+      <h1>Amuseworthy</h1>
+    </div>
+    <nav class="tabs nav" role="tablist" aria-label="View">
+      <button type="button" class="nav-item" role="tab" id="tab-ideas" aria-controls="view-ideas" aria-selected="true"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18h6M10 22h4M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"/></svg><span class="nav-label">Ideas</span></button>
+      <button type="button" class="nav-item" role="tab" id="tab-matrix" aria-controls="view-matrix" aria-selected="false" tabindex="-1"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2zM12 3v18M3 12h18"/></svg><span class="nav-label">Compare</span></button>
+      <button type="button" class="nav-item" role="tab" id="tab-coach" aria-controls="view-coach" aria-selected="false" tabindex="-1" hidden><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg><span class="nav-label">Coach</span></button>
+    </nav>
+  </aside>
+  <div class="main">
+  <header class="topbar">
+    <div class="topbar-left">
+      <div class="account" id="account" hidden>
+        <span class="sync-status" id="sync-status" role="status"></span>
+        <span class="account-email" id="account-email"></span>
+        <button type="button" class="btn btn-small btn-ghost" id="sign-out">Sign out</button>
+      </div>
+      <div class="theme-switch" role="radiogroup" aria-label="Theme" id="theme-switch">
+        <button type="button" role="radio" aria-checked="true" data-theme-choice="system" title="Follow the system's light or dark setting"><svg class="icon icon-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zM8 21h8M12 17v4"/></svg><span class="visually-hidden">System</span></button>
+        <button type="button" role="radio" aria-checked="false" tabindex="-1" data-theme-choice="light" title="Light theme"><svg class="icon icon-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 16a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><span class="visually-hidden">Light</span></button>
+        <button type="button" role="radio" aria-checked="false" tabindex="-1" data-theme-choice="dark" title="Dark theme"><svg class="icon icon-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><span class="visually-hidden">Dark</span></button>
+        <button type="button" role="radio" aria-checked="false" tabindex="-1" data-theme-choice="halloween" title="Halloween theme: a night sky with pumpkins"><svg class="icon icon-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 6c-1.2-1.6-1-3.4.5-4.5M12 6c-3.5-1-6.5.5-7.8 3.7-1.5 3.8-.3 9 3 10.8 1.6.9 3.3.4 4.8.4s3.2.5 4.8-.4c3.3-1.8 4.5-7 3-10.8C18.5 6.5 15.5 5 12 6zM9 11l1.5 2.2h-3zM15 11l1.5 2.2h-3zM8 16l1.3 1.3L10.6 16l1.4 1.3L13.4 16l1.3 1.3L16 16"/></svg><span class="visually-hidden">Halloween</span></button>
+      </div>
+    </div>
+    <span class="topbar-spacer"></span>
+    <div class="actions">
+      <button type="button" class="btn btn-iconic" id="open-settings" aria-controls="view-settings" aria-pressed="false"><svg class="icon icon-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.6 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.6a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg><span class="btn-label">Settings</span></button>
+      <button type="button" class="btn btn-primary" id="new-idea"><svg class="icon icon-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>New idea</button>
+    </div>
+  </header>
+
+  <section class="auth-screen" id="auth-screen" aria-labelledby="auth-title" hidden>
+    <div class="auth-card auth-pitch">
+      <div class="auth-brand">
+        <span class="brand-mark" aria-hidden="true">A</span>
+        <p class="auth-brand-name">Amuseworthy</p>
+        <span class="auth-beta">Invite-only beta</span>
+      </div>
+      <p class="auth-eyebrow">Pressure-test your idea before you build it.</p>
+      <h2 id="auth-title">See which of your ideas is worth building</h2>
+      <p class="auth-lead">Score every idea on the same gates and lines, read a verdict you can explain, and fix the weak lines with an AI coach before you spend a month building. Then publish a landing page for the one you choose.</p>
+      <ul class="auth-benefits">
+        <li>Same questions for every idea</li>
+        <li>Nothing changes without you</li>
+        <li>Private: no ads, no tracking</li>
+      </ul>
+      <ol class="auth-steps">
+        <li>Compare your options</li>
+        <li>Improve your offer</li>
+        <li>Publish your first page</li>
+      </ol>
+      <button type="button" class="btn btn-primary btn-google" id="sign-in">Continue with Google</button>
+      <p class="auth-fine auth-free"><strong>Free to use.</strong> Coach, competition reviews and landing pages run on your own Meta API key, and Meta bills you directly.</p>
+      <p class="auth-fine">Invite-only for now: use the Google account you were invited with.</p>
+      <p class="auth-message" id="auth-message" role="alert" hidden></p>
+      <p class="auth-proof">4 gates and 21 lines, scored the same way every time, so your ideas compare fairly.</p>
+      <div class="auth-trust">
+        <p class="auth-trust-title">Privacy first</p>
+        <p>Your ideas are private to your account. No ads, no analytics, no tracking, and your data is never sold. Only what you choose goes to Meta's models.</p>
+        <p class="auth-fine"><a href="privacy.html">Privacy</a> · <a href="security.html">Security</a></p>
+      </div>
+      <p class="auth-motto">Build for Your World</p>
+    </div>
+    <figure class="auth-figure">
+      <img class="auth-overview" src="images/overview.svg" width="900" height="1200" alt="How Amuseworthy works. 1: Compare your options: score each idea on the same gates and star lines, and see them ranked by Average Stars with a verdict. 2: Improve your offer: Coach, an AI, asks about the weak lines and shows what each answer does to the score. 3: Publish your first page: an AI writes a landing page for the idea you choose, and you publish it at its own address.">
+      <figcaption>The three steps, as they look in the app.</figcaption>
+    </figure>
+  </section>
+
+  <div class="banner" id="example-banner" hidden>
+    <p>Ideas marked <span class="pill pill-example">Example</span> are samples that show how scoring works. Editing one keeps it.</p>
+    <button type="button" class="btn btn-small" id="remove-examples">Remove examples</button>
+  </div>
+
+  <div class="banner" id="storage-banner" role="alert" hidden>
+    <p></p>
+  </div>
+
+  <main>
+    <section class="workbench" id="view-ideas" role="tabpanel" aria-labelledby="tab-ideas">
+      <aside class="rail" aria-label="Ideas">
+        <div class="filters">
+          <label class="visually-hidden" for="search">Search ideas</label>
+          <div class="search-box"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 21l-4.3-4.3M19 11a8 8 0 1 1-16 0 8 8 0 0 1 16 0z"/></svg><input type="search" id="search" placeholder="Search ideas" autocomplete="off"></div>
+          <div class="filter-row">
+            <label class="field-inline"><span>Status</span>
+              <select id="filter-status"><option value="">All</option></select>
+            </label>
+            <label class="field-inline"><span>Tag</span>
+              <select id="filter-tag"><option value="">All</option></select>
+            </label>
+            <label class="field-inline"><span>Sort</span>
+              <select id="sort">
+                <option value="score">Stars</option>
+                <option value="name">Name</option>
+                <option value="updated">Edited</option>
+              </select>
+            </label>
+          </div>
+        </div>
+        <p class="list-count" id="list-count" aria-live="polite"></p>
+        <ol class="idea-list" id="idea-list"></ol>
+      </aside>
+
+      <section class="scorecard" id="editor" aria-label="Selected idea"></section>
+    </section>
+
+    <section class="matrix-view" id="view-matrix" role="tabpanel" aria-labelledby="tab-matrix" hidden>
+      <div class="page-head">
+        <div>
+          <h2 class="page-title">Compare</h2>
+          <p class="page-sub">Every idea, or pick a goal or a tag to narrow it. Ideas with the same goal share weights and verdict bands, so they compare fairly. Click a name to open it.</p>
+        </div>
+        <div class="compare-by">
+          <div class="seg seg-goals" id="compare-goal" role="group" aria-label="Compare by goal">
+            <button type="button" data-compare-goal="income" aria-pressed="false"><b>Income</b><span>you keep working</span></button>
+            <button type="button" data-compare-goal="asset" aria-pressed="false"><b>Asset</b><span>a company you can sell</span></button>
+          </div>
+          <label class="field-inline compare-tag"><span>Or by tag</span>
+            <select id="compare-tag"><option value="">Choose a tag</option></select>
+          </label>
+        </div>
+      </div>
+      <div class="matrix-scroll" id="matrix"></div>
+    </section>
+
+    <section class="coach-view" id="view-coach" role="tabpanel" aria-labelledby="tab-coach" hidden>
+      <aside class="coach-rail" aria-label="Conversations">
+        <button type="button" class="btn btn-primary" id="coach-new" data-action="coach-new"><svg class="icon icon-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>New conversation</button>
+        <ul class="coach-list" id="coach-list"></ul>
+        <div class="coach-rail-foot">
+          <p class="coach-rail-note">Conversations are kept in this browser only.</p>
+        </div>
+      </aside>
+      <div class="coach-main">
+        <header class="coach-head">
+          <div class="coach-head-text">
+            <h2 id="coach-title">New conversation</h2>
+            <p class="coach-model"><span class="chip"><svg class="icon icon-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8zM19 17l.7 2 2 .7-2 .7-.7 2-.7-2-2-.7 2-.7z"/></svg><span id="coach-model-name"></span></span></p>
+          </div>
+          <div class="landing-actions confirm" id="coach-head-actions"></div>
+        </header>
+        <div class="coach-log" id="coach-log" aria-live="polite"></div>
+        <form class="coach-form" id="coach-form">
+          <label class="visually-hidden" for="coach-input">Message to Coach</label>
+          <textarea id="coach-input" rows="3"></textarea>
+          <div class="coach-send">
+            <button type="submit" class="btn btn-primary" id="coach-send">Send</button>
+            <button type="button" class="btn" id="coach-stop" hidden>Stop</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <section class="settings-view" id="view-settings" aria-labelledby="settings-title" hidden>
+      <div class="page-head">
+        <div>
+          <h2 class="page-title" id="settings-title">Settings</h2>
+          <p class="page-sub">Your AI keys and models, what your account holds, and backups. Keys and models stay in this browser.</p>
+        </div>
+        <button type="button" class="btn btn-small" id="settings-back" hidden><svg class="icon icon-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg><span id="settings-back-label">Back</span></button>
+      </div>
+      <div class="settings">
+        <nav class="settings-nav" aria-label="Settings sections">
+          <a href="#settings-keys" data-cloud>AI providers</a>
+          <a href="#settings-models" data-cloud>Models</a>
+          <a href="#settings-usage" data-cloud>Usage</a>
+          <a href="#settings-data">Backups</a>
+        </nav>
+        <div class="settings-body">
+          <section class="settings-section" id="settings-keys" aria-labelledby="settings-keys-title" data-cloud>
+            <h3 id="settings-keys-title">AI providers</h3>
+            <p class="settings-lead">Coach, competition reviews and landing pages run on the Meta models you choose, with your own Meta API key. Meta bills you directly for what you use.</p>
+            <div class="card vault-rows" id="vault-rows"></div>
+            <div class="settings-actions">
+              <span class="sheet-status" id="vault-status" role="status"></span>
+              <button type="button" class="btn btn-primary" id="vault-save">Save keys</button>
+            </div>
+            <p class="settings-note">Your key is kept in this browser only, never in your account. When a feature runs, the key goes with the idea or conversation through this site to Meta; nothing is stored on the way. Anyone who can sign in to your account in this browser can use the keys, so click <strong>Forget</strong> on a shared computer.</p>
+          </section>
+
+          <section class="settings-section" id="settings-models" aria-labelledby="settings-models-title" data-cloud>
+            <h3 id="settings-models-title">Models</h3>
+            <p class="settings-lead">Each feature picks its own model, and Meta bills you for what it uses. A choice is kept the moment you make it.</p>
+            <div class="card model-rows">
+              <div class="model-row">
+                <div class="model-what"><label for="coach-model">Coach</label><span>Every message sends the whole conversation again, so a long grilling costs more than one landing page.</span></div>
+                <select id="coach-model"></select>
+                <p class="ai-model-note" id="coach-model-note" hidden></p>
+                <span class="sheet-status" id="coach-model-status" role="status"></span>
+              </div>
+              <div class="model-row">
+                <div class="model-what"><label for="landscape-model">Competition review</label><span>Researches the competition on the web, about 40 to 50 searches a review. Muse Spark 1.3 searches and Muse Wonder 1.0 writes the review, about 0.65 USD in all. The review is saved to your account.</span></div>
+                <select id="landscape-model"></select>
+                <p class="ai-model-note" id="landscape-model-note" hidden></p>
+                <span class="sheet-status" id="landscape-model-status" role="status"></span>
+              </div>
+              <div class="model-row">
+                <div class="model-what"><label for="ai-model">Landing page</label><span>Writes a one-page website from the idea's notes. About 3 to 16 cents a page.</span></div>
+                <select id="ai-model"></select>
+                <p class="ai-model-note" id="ai-model-note" hidden></p>
+                <span class="sheet-status" id="ai-model-status" role="status"></span>
+              </div>
+            </div>
+          </section>
+
+          <section class="settings-section" id="settings-usage" aria-labelledby="settings-usage-title" data-cloud>
+            <h3 id="settings-usage-title">Usage</h3>
+            <p class="settings-lead">What your account holds, out of the most it keeps. Deleting makes room at once; nothing here renews or expires.</p>
+            <div class="card usage-rows">
+              <div class="model-row">
+                <div class="model-what"><b>Ideas</b><span>Every idea in your account. Delete one to add another.</span></div>
+                <span class="usage-count" id="usage-ideas" aria-live="polite"></span>
+              </div>
+              <div class="model-row">
+                <div class="model-what"><b>Landing page drafts</b><span>Every draft a model wrote, on any idea. Delete drafts, or ideas with them, to make more.</span></div>
+                <span class="usage-count" id="usage-drafts" aria-live="polite"></span>
+              </div>
+              <div class="model-row">
+                <div class="model-what"><b>Production pages</b><span>Ideas with a page at their own address, published or not. Delete the idea to free its place; unpublishing alone keeps it.</span></div>
+                <span class="usage-count" id="usage-pages" aria-live="polite"></span>
+              </div>
+              <div class="model-row">
+                <div class="model-what"><b>Competition reviews</b><span>Every review kept, on any idea, and any still running. Delete reviews, or ideas with them, to make more.</span></div>
+                <span class="usage-count" id="usage-reviews" aria-live="polite"></span>
+              </div>
+            </div>
+          </section>
+
+          <section class="settings-section" id="settings-data" aria-labelledby="settings-data-title">
+            <h3 id="settings-data-title">Backups</h3>
+            <div class="card settings-row">
+              <div class="model-what"><b>Backup file</b><span>Export saves every idea, with its goal, gates, stars and notes, to a file. Import reads one back, added to your ideas or replacing them.</span></div>
+              <div class="settings-row-actions">
+                <button type="button" class="btn" id="open-export"><svg class="icon icon-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>Export</button>
+                <button type="button" class="btn" id="open-import"><svg class="icon icon-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M17 8l-5-5-5 5M12 3v12"/></svg>Import</button>
+              </div>
+            </div>
+          </section>
+
+        </div>
+      </div>
+    </section>
+  </main>
+  </div>
+</div>
+
+<dialog class="sheet" id="export-dialog" aria-labelledby="export-title">
+  <form method="dialog" class="sheet-body">
+    <header class="sheet-head">
+      <h2 id="export-title">Export ideas</h2>
+      <button type="submit" class="btn btn-ghost" aria-label="Close">Close</button>
+    </header>
+    <p class="sheet-note">A JSON backup of every idea, with all its ratings, gates, goal, notes and settings. Import it here to restore your ideas or move them to another browser.</p>
+    <label class="visually-hidden" for="export-text">Exported data</label>
+    <textarea id="export-text" readonly rows="10" spellcheck="false"></textarea>
+    <div class="sheet-actions">
+      <span class="sheet-status" id="export-status" role="status"></span>
+      <button type="button" class="btn" id="copy-export">Copy</button>
+      <button type="button" class="btn btn-primary" id="download-export">Download</button>
+    </div>
+  </form>
+</dialog>
+
+<dialog class="sheet" id="import-dialog" aria-labelledby="import-title">
+  <form method="dialog" class="sheet-body" id="import-form">
+    <header class="sheet-head">
+      <h2 id="import-title">Import ideas</h2>
+      <button type="submit" class="btn btn-ghost" aria-label="Close">Close</button>
+    </header>
+    <p class="sheet-note">Choose a JSON backup exported from this app.</p>
+    <label class="file-drop" for="import-file">
+      <span class="file-drop-label">Choose a file</span>
+      <span class="file-drop-hint" id="import-file-name">.json</span>
+      <input type="file" id="import-file" accept=".json,application/json">
+    </label>
+    <details class="paste">
+      <summary>Or paste a JSON backup</summary>
+      <label class="visually-hidden" for="import-text">Pasted data</label>
+      <textarea id="import-text" rows="6" spellcheck="false" placeholder="{ &quot;app&quot;: &quot;ideation-calculator&quot;, &quot;ideas&quot;: [ … ] }"></textarea>
+    </details>
+    <fieldset class="segmented">
+      <legend class="visually-hidden">Import mode</legend>
+      <label><input type="radio" name="import-mode" id="import-add" value="add" checked> Add to my ideas</label>
+      <label><input type="radio" name="import-mode" id="import-replace" value="replace"> Replace all ideas</label>
+    </fieldset>
+    <p class="import-result" id="import-result" role="status"></p>
+    <div class="sheet-actions">
+      <button type="button" class="btn btn-primary" id="run-import" disabled>Import</button>
+    </div>
+  </form>
+</dialog>
+
+<script src="src/config.js"></script>
+<script src="src/core.js"></script>
+<script src="src/descriptions.js"></script>
+<script src="src/landing.js"></script>
+<script src="src/coach.js"></script>
+<script src="src/landscape.js"></script>
+<script src="src/cloud.js"></script>
+<script src="src/app.js"></script>
+</body>
+</html>
